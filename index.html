@@ -473,9 +473,9 @@
     <h3>Cara Bermain</h3>
     <ol>
       <li><strong>Terdapat 15 pertanyaan</strong> dari beberapa kategori risiko.</li>
-      <li>Setiap jawaban benar mendapat poin. <strong>Pertanyaan semakin sulit dan bernilai lebih tinggi</strong> seiring berjalannya permainan.</li>
+      <li>Setiap jawaban benar akan mendapat poin. <strong>Pertanyaan semakin sulit dan bernilai lebih tinggi</strong> seiring berjalannya permainan.</li>
       <li>Kamu punya waktu <strong>60 detik</strong> per soal. Waktu habis = jawaban salah.</li>
-      <li><strong>Peserta dengan skor tertinggi masuk undian hadiah.</strong></li>
+      <li><strong>Peserta dengan skor tinggi berkesempatan masuk ke undian hadiah.</strong></li>
       <li>Selamat bermain</li>
     </ol>
   </div>
@@ -583,11 +583,15 @@ const QUESTIONS = [
     fb: "PMI di atas 50 menunjukkan sektor manufaktur sedang bertumbuh. Semakin tinggi angkanya, semakin kuat aktivitas bisnis dan produksi."
   },
   {
-    level: 5, pts: 500, cat: "Lingkungan",
-    q: "Indonesia berkomitmen untuk mencapai emisi gas rumah kaca net-zero pada tahun berapa?",
-    opts: ["2045","2050","2060","2070"],
+    level: 5, pts: 500, cat: "Identifikasi Risiko",
+    q: "Di gudang suku cadang, volume pengiriman meningkat signifikan sehingga inspeksi harian forklift beberapa kali tidak dilakukan untuk mengejar target distribusi. Manakah identifikasi risiko yang PALING TEPAT?",
+    opts: [
+      "Risk Event: Distribusi material terlambat; Risk Cause: Target pengiriman meningkat; Risk Impact: Forklift mengalami kerusakan",
+      "Risk Event: Inspeksi harian tidak dilakukan; Risk Cause: Operator bekerja lembur; Risk Impact: Forklift mengalami kerusakan",
+      "Risk Event: Forklift mengalami kerusakan; Risk Cause: Inspeksi harian forklift tidak dilakukan; Risk Impact: Distribusi material terganggu dan produksi mengalami keterlambatan",
+      "Risk Event: Operator bekerja lembur; Risk Cause: Distribusi material terlambat; Risk Impact: Forklift mengalami kerusakan"],
     ans: 2,
-    fb: "Indonesia menargetkan net-zero pada 2060, lebih lambat dari banyak negara maju. Ini membentuk kebijakan transisi energi jangka panjang dan insentif adopsi kendaraan listrik di pasar domestik."
+    fb: "Pada kasus ini, tidak dilakukannya inspeksi harian forklift merupakan risk cause yang meningkatkan kemungkinan terjadinya risk event, yaitu kerusakan forklift saat operasional. Apabila risiko tersebut terjadi, perusahaan dapat mengalami risk impact berupa terganggunya distribusi material ke area produksi yang berakibat pada keterlambatan atau terhentinya proses produksi."
   },
   {
     level: 6, pts: 600, cat: "Regulasi Pemerintah",
@@ -622,16 +626,16 @@ const QUESTIONS = [
     fb: "IEA memproyeksikan penjualan EV global mendekati 23 juta unit pada 2026."
   },
   {
-    level: 9, pts: 900, cat: "Regulasi Pemerintah",
-    q: "Pemerintah Indonesia menyiapkan regulasi AI yang fokus pada:",
+    level: 9, pts: 900, cat: "Siber",
+    q: "Seorang karyawan menggunakan AI generatif publik untuk membantu membuat laporan manajemen. Tanpa disadari, ia mengunggah data penjualan, informasi pelanggan, dan strategi bisnis perusahaan ke platform AI tersebut. Data tersebut kemudian tersimpan di sistem pihak ketiga yang berada di luar kendali perusahaan. Manakah identifikasi risiko yang PALING TEPAT?",
     opts: [
-      "Pelarangan dan pembatasan penggunaan internet",
-      "Penghapusan data center",
-      "Pelarangan penggunaan chatbot",
-      "Menyeimbangkan inovasi dan pengendalian risiko AI"
+      "Risk Event: Kebocoran atau paparan informasi rahasia perusahaan melalui platform AI pihak ketiga.; Risk Cause: Karyawan mengunggah data sensitif perusahaan ke platform AI publik tanpa memahami risiko keamanan data.; Risk Impact: Kerugian reputasi, pelanggaran regulasi perlindungan data, dan hilangnya keunggulan kompetitif perusahaan.",
+      "Risk Event: Karyawan menggunakan AI generatif.; Risk Cause: Kebocoran data pelanggan.; Risk Impact: Data sensitif diunggah ke platform AI publik.",
+      "Risk Event: Pelanggaran regulasi perlindungan data.; Risk Cause: Reputasi perusahaan menurun.; Risk Impact: Denda dari pemerintah",
+      "Risk Event: Strategi bisnis perusahaan tersedia dalam laporan manajemen.; Risk Cause: Penggunaan AI generatif meningkat di dunia bisnis.; Risk Impact: Karyawan lebih cepat membuat laporan."
     ],
-    ans: 3,
-    fb: "Regulasi AI bertujuan menjaga inovasi tetap berkembang dengan mitigasi risiko yang memadai."
+    ans: 0,
+    fb: "penyebab utama (risk cause) berasal dari tindakan karyawan yang mengunggah data sensitif ke platform AI publik tanpa kontrol dan pemahaman yang memadai terkait keamanan informasi. Kondisi tersebut dapat memicu risk event berupa kebocoran atau paparan informasi rahasia perusahaan kepada pihak yang tidak berwenang melalui sistem AI pihak ketiga. Apabila kejadian tersebut terjadi, perusahaan dapat mengalami risk impact berupa kerugian reputasi, pelanggaran regulasi perlindungan data, potensi tuntutan hukum, serta hilangnya keunggulan kompetitif akibat tereksposnya informasi strategis perusahaan."
   },
   // ── LEVEL 10–12: Sangat Sulit (1000–1200 pts) ──
   {
